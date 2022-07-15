@@ -1,14 +1,14 @@
 let fs = require('fs') 
 let chalk = require('chalk')
 
-owner = [
-  ['62895330379186'],
-  ['62895330379186'],
-  ['62895330379186', 'Owner', true]
-  // [number, dia creator/owner?, dia developer?]
+owner = [Azken boyz
+  ['62881026605024'],
+  ['62881026605024'],
+  ['62881026605024', 'Owner', true]
+  // [number, dia creator/owner?, azken?]
 ] // Put your number here
 mods = [] // Want some help?
-prems = [] // Premium user has unlimited limit
+prems = [AZKEN2011] // Premium user has unlimited limit
 APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
@@ -40,8 +40,8 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
 const spack = fs.readFileSync("lib/exif.json")
 const stickerpack = JSON.parse(spack)
 if (stickerpack.spackname == '') {
-  var sticker_name = '@ainee_bot'
-  var sticker_author = 'Aine'
+  var sticker_name = '@azken_bot'
+  var sticker_author = 'Azken'
 } else {
   var sticker_name = stickerpack.spackname
   var sticker_author = stickerpack.sauthor
@@ -57,8 +57,8 @@ fs.watchFile(file_exif, () => {
 
 // Sticker WM
 packname = sticker_name
-author = sticker_author
-wm = '© Aine'
+author = sticker_author-azken
+wm = '© Azken'
 
 multiplier = 1000 // The higher, The harder levelup
 
@@ -86,13 +86,13 @@ rpg = {
       dog: '🐕',
       fox: '🦊',
       petFood: '🍖',
-      iron: '⛓️',
+      iron: '⛓',
       gold: '👑',
       emerald: '💚'
     }
     let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
     if (!results.length) return ''
-    else return emot[results[0][0]]
+    else return emot[results[0][1]]
   }
 }
 
@@ -101,5 +101,6 @@ fs.watchFile(file, () => {
   fs.unwatchFile(file)
   console.log(chalk.redBright("Update 'config.js'"))
   delete require.cache[file]
-  require(file)
+  require(file)F
+
 })
